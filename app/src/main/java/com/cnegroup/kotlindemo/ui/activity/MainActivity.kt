@@ -15,6 +15,10 @@ import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IMainView {
 
+//    override fun swipeFinishEnable(): Boolean {
+//        return true
+//    }
+
     override fun attachView() {
         mPresenter.attachView(this)
     }
@@ -25,7 +29,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IMainView {
 
     override fun goLogin() {
         startActivity(Intent(this, LoginActivity::class.java))
-        finish()
+//        finish()
     }
 
     override fun init() {
@@ -73,4 +77,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IMainView {
         }
     }
 
+    override fun isSupportSwipeBack(): Boolean {
+        return false
+    }
 }

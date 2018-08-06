@@ -10,7 +10,7 @@ import javax.inject.Inject
  * Created by zhaoyuehai 2018/8/1
  */
 @SuppressLint("Registered")
-abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity(), IBaseView {
+abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity2(), IBaseView {
 
     //P  dagger注入
     @Inject

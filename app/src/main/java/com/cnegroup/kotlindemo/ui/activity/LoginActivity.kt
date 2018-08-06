@@ -11,6 +11,7 @@ import com.cnegroup.kotlindemo.base.BaseMvpActivity
 import com.cnegroup.kotlindemo.contract.LoginContract
 import com.cnegroup.kotlindemo.injection.component.DaggerLoginComponent
 import com.cnegroup.kotlindemo.presenter.LoginPresenter
+import com.cnegroup.kotlindemo.widget.SwipeBackLayout
 import kotlinx.android.synthetic.main.activity_login.*
 
 /**
@@ -18,6 +19,14 @@ import kotlinx.android.synthetic.main.activity_login.*
  * Created by zhaoyuehai 2018/8/1
  */
 class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginContract.ILoginView {
+
+//    override fun swipeFinishEnable(): Boolean {
+//        return true
+//    }
+//
+//    override fun getDragEdge(): SwipeBackLayout.DragEdge {
+//        return SwipeBackLayout.DragEdge.TOP
+//    }
 
     override fun attachView() {
         mPresenter.attachView(this)
