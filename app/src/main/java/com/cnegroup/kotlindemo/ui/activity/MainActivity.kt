@@ -4,6 +4,8 @@ import android.content.Intent
 import android.support.design.widget.Snackbar
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Toast
+import com.cnegroup.kotlindemo.MyApplication
 import com.cnegroup.kotlindemo.R
 import com.cnegroup.kotlindemo.base.BaseApplication
 import com.cnegroup.kotlindemo.base.BaseMvpActivity
@@ -47,7 +49,7 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IMainView {
     }
 
     override fun initData() {
-        val user = BaseApplication.mContext.getUser()
+        val user = MyApplication.mContext.getUser()
         if (user != null) {
             login_tv.setText("退出")
             main_content_tv.setText(user.toString())
@@ -74,6 +76,16 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IMainView {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private var exitTime: Long = 0
+    override fun onBackPressed() {
+        if(System.currentTimeMillis()-exitTime>2000){
+            Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show()
+            exitTime = System.currentTimeMillis()}
+        else{
+            MyApplication.mContext.exit()
         }
     }
 

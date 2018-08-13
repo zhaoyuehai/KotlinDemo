@@ -1,6 +1,7 @@
 package com.cnegroup.kotlindemo.base
 
 import android.annotation.SuppressLint
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -51,7 +52,7 @@ abstract class BaseActivity1 : AppCompatActivity() {
 //            Log.i("setOnSwipeBackListener", "----fractionAnchor:" + fractionAnchor + "---fractionScreen:" + fractionScreen)
 //        })
         ivShadow = ImageView(this)
-        ivShadow!!.setBackgroundColor(resources.getColor(R.color.black_p50))
+        ivShadow!!.setBackgroundColor(ContextCompat.getColor(this,R.color.black_p50))
         container.addView(ivShadow, LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT))
         container.addView(swipeBackLayout)
         return container

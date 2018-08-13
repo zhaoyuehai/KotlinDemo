@@ -4,13 +4,14 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import com.cnegroup.kotlindemo.Constant
+import com.cnegroup.kotlindemo.MyApplication
 import com.cnegroup.kotlindemo.base.BaseApplication
 
 /*
     SP工具类
  */
 object SharedPrefsUtils {
-    private var sp: SharedPreferences = BaseApplication.mContext.getSharedPreferences(Constant.SHARED_PREFERENCES, Context.MODE_PRIVATE)
+    private var sp: SharedPreferences = MyApplication.mContext.getSharedPreferences(Constant.SHARED_PREFERENCES, Context.MODE_PRIVATE)
     private var ed: Editor
 
     init {

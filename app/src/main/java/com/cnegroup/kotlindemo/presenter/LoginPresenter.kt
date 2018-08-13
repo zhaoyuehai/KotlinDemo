@@ -1,6 +1,7 @@
 package com.cnegroup.kotlindemo.presenter
 
 import android.text.TextUtils
+import com.cnegroup.kotlindemo.MyApplication
 import com.cnegroup.kotlindemo.base.BaseApplication
 import com.cnegroup.kotlindemo.base.BasePresenter
 import com.cnegroup.kotlindemo.base.BaseResultBean
@@ -48,7 +49,7 @@ class LoginPresenter @Inject constructor() : BasePresenter<LoginContract.ILoginV
                             if (getView() == null) return
                             getView()!!.showToast(result.message)
                             if (result.code.equals("10000")) {
-                                BaseApplication.mContext.setUser(result.data)
+                                MyApplication.mContext.setUser(result.data)
                                 getView()!!.goMain()
                             }
                         }

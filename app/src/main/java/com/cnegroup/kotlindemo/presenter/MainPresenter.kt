@@ -1,5 +1,6 @@
 package com.cnegroup.kotlindemo.presenter
 
+import com.cnegroup.kotlindemo.MyApplication
 import com.cnegroup.kotlindemo.base.BaseApplication
 import com.cnegroup.kotlindemo.base.BasePresenter
 import com.cnegroup.kotlindemo.contract.MainContract
@@ -17,8 +18,8 @@ class MainPresenter @Inject constructor() : BasePresenter<MainContract.IMainView
     }
 
     fun onLoginClick() {
-        if (BaseApplication.mContext.getUser() != null) {
-            BaseApplication.mContext.setUser(null)
+        if (MyApplication.mContext.getUser() != null) {
+            MyApplication.mContext.setUser(null)
             if (getView() != null)
                 getView()!!.initData()
         } else {

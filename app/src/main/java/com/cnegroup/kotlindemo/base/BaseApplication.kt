@@ -6,6 +6,7 @@ import android.app.Application
 import android.os.Bundle
 import android.support.multidex.MultiDexApplication
 import android.util.Log
+import com.cnegroup.kotlindemo.MyApplication.Companion.mContext
 import com.cnegroup.kotlindemo.data.response.UserBean
 import com.cnegroup.kotlindemo.ui.activity.MainActivity
 
@@ -20,14 +21,8 @@ open class BaseApplication : MultiDexApplication(), Application.ActivityLifecycl
     private var mActivityList = arrayListOf<Activity>()
     private var runningActivityList = arrayListOf<Activity>()
 
-    //静态的
-    companion object {
-        lateinit var mContext: BaseApplication
-    }
-
     override fun onCreate() {
         super.onCreate()
-        mContext = this
         registerActivityLifecycleCallbacks(this)
     }
 

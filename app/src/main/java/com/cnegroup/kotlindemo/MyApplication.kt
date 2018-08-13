@@ -9,9 +9,15 @@ import com.cnegroup.kotlindemo.base.BaseApplication
  */
 class MyApplication : BaseApplication() {
 
+    //静态的
+    companion object {
+        lateinit var mContext: MyApplication
+    }
+
     val problemViewClassList: List<Class<View>> = ArrayList()
 
     override fun onCreate() {
+        mContext = this
         super.onCreate()
         BGASwipeBackHelper.init(this, problemViewClassList)
     }
