@@ -28,33 +28,39 @@ class LoginPresenter @Inject constructor() : BasePresenter<LoginContract.ILoginV
     fun login(username: String, password: String) {
         if (getView() == null) return
         if (checkInput(username, password)) {
-            loginModule.login(username, password, object : BaseObserver<BaseResultBean<UserBean>>() {
-
-                override fun onStart(disposable: Disposable?) {
-                    addDisposable(disposable)
-                    if (getView() != null)
-                        getView()!!.showProgress(true)
-                }
-
-                override fun onFinish(disposable: Disposable?, e: Throwable?) {
-                    deleteDisposable(disposable)
-                    if (getView() != null) {
-                        if (e != null) {
-                            getView()!!.showToast("登录失败:" + e.message)
-                        }
-                        getView()!!.showProgress(false)
-                    }
-                }
-
+            loginModule.login(username, password, object : BaseObserver<BaseResultBean<UserBean>>(this) {
 
                 override fun onNext(result: BaseResultBean<UserBean>) {
                     if (getView() == null) return
                     getView()!!.showToast(result.message)
                     if (result.code.equals("10000")) {
                         MyApplication.mContext.setUser(result.data)
-                        getView()!!.goMain()
                     }
                 }
+
+                override fun onComplete() {
+                    super.onComplete()
+                    if (getView() != null) {
+                        getView()!!.showProgress(false)
+                        if (MyApplication.mContext.getUser() != null)
+                            getView()!!.goMain()
+                    }
+                }
+
+                override fun onSubscribe(d: Disposable) {
+                    super.onSubscribe(d)
+                    if (getView() != null)
+                        getView()!!.showProgress(true)
+                }
+
+                override fun onError(e: Throwable) {
+                    super.onError(e)
+                    if (getView() != null) {
+                        getView()!!.showToast("登录失败:" + e.message)
+                        getView()!!.showProgress(false)
+                    }
+                }
+
             })
         }
     }

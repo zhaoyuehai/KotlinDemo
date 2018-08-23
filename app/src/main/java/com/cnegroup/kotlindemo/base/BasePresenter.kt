@@ -2,6 +2,7 @@ package com.cnegroup.kotlindemo.base
 
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
+import io.reactivex.internal.disposables.DisposableContainer
 
 /**
  * MVP中的Presenter基类
@@ -11,7 +12,31 @@ import io.reactivex.disposables.Disposable
  *
  * 例如：open class LoginPresenter @Inject constructor() : BasePresenter<LoginContract.ILoginView>()......
  */
-open class BasePresenter<T : IBaseView> {
+open class BasePresenter<T : IBaseView> : DisposableContainer {
+    
+    override fun add(d: Disposable): Boolean {
+        //如果解绑了的话添加,需要新的实例否则绑定时无效的
+        if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
+            mCompositeDisposable = CompositeDisposable()
+        }
+        return mCompositeDisposable!!.add(d)
+    }
+
+    override fun remove(d: Disposable): Boolean {
+        //如果解绑了的话添加,需要新的实例否则绑定时无效的
+        if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
+            mCompositeDisposable = CompositeDisposable()
+        }
+        return mCompositeDisposable!!.add(d)
+    }
+
+    override fun delete(d: Disposable): Boolean {
+        //如果解绑了的话添加,需要新的实例否则绑定时无效的
+        if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
+            mCompositeDisposable = CompositeDisposable()
+        }
+        return mCompositeDisposable!!.add(d)
+    }
 
     fun getView(): T? {
         return mView
@@ -29,20 +54,6 @@ open class BasePresenter<T : IBaseView> {
         if (mCompositeDisposable != null)
             mCompositeDisposable!!.clear()
         mView = null
-    }
-
-    fun addDisposable(disposable: Disposable?) {
-        //如果解绑了的话添加,需要新的实例否则绑定时无效的
-        if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
-            mCompositeDisposable = CompositeDisposable()
-        }
-        if (disposable != null)
-            mCompositeDisposable!!.add(disposable)
-    }
-
-    fun deleteDisposable(disposable: Disposable?) {
-        if (disposable != null && mCompositeDisposable != null)
-            mCompositeDisposable!!.delete(disposable)
     }
 
 }
