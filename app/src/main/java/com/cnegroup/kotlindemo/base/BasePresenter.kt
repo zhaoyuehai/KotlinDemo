@@ -26,9 +26,9 @@ open class BasePresenter<T : IBaseView> {
     }
 
     fun detachView() {
-        mView = null
         if (mCompositeDisposable != null)
             mCompositeDisposable!!.clear()
+        mView = null
     }
 
     fun addDisposable(disposable: Disposable?) {

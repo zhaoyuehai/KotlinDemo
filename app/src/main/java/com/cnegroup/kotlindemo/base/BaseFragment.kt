@@ -4,7 +4,7 @@ import android.support.v4.app.Fragment
 import android.util.Log
 
 /**
- * Activity基类，无关MVP
+ * Fragment基类，无关MVP
  * Created by zhaoyuehai 2018/8/1
  */
 class BaseFragment : Fragment() {

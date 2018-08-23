@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.annotation.LayoutRes
 import android.widget.Toast
+import butterknife.ButterKnife
+import butterknife.Unbinder
 import javax.inject.Inject
 
 /**
@@ -28,9 +30,12 @@ abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity2(), IBaseVie
      */
     abstract fun injectComponent()
 
+    private var unbinder: Unbinder? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getContentViewId())
+        unbinder = ButterKnife.bind(this)
         injectComponent()
         attachView()
         init()
@@ -42,6 +47,8 @@ abstract class BaseMvpActivity<T : BasePresenter<*>> : BaseActivity2(), IBaseVie
 
     override fun onDestroy() {
         super.onDestroy()
+        if (unbinder != null)
+            unbinder?.unbind()
         mPresenter.detachView()
     }
 }
