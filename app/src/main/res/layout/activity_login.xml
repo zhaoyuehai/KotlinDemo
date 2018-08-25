@@ -1,77 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:background="@color/white"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ui.activity.LoginActivity">
+    android:background="@color/basic_page_bg"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/login_form"
+    <ImageView
+        android:layout_width="@dimen/x135"
+        android:layout_height="@dimen/y200"
+        android:layout_marginTop="@dimen/y120"
+        android:contentDescription="@null"
+        android:src="@drawable/ic_login_logo" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="@dimen/y130"
+        android:layout_marginTop="@dimen/y64"
+        android:background="@color/basic_white"
+        android:paddingLeft="@dimen/x86"
+        android:paddingRight="@dimen/x86">
 
-        <LinearLayout
-            android:id="@+id/email_login_form"
+        <ImageView
+            android:id="@+id/icon_login_user"
+            android:layout_width="@dimen/x42"
+            android:layout_height="@dimen/y48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_login_user" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginStart="@dimen/x60"
+            android:layout_toEndOf="@id/icon_login_user"
+            android:layout_toRightOf="@id/icon_login_user"
+            android:background="@null"
+            android:hint="@string/prompt_username"
+            android:inputType="text"
+            android:textColor="@color/basic_text_color"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y2"
+        android:background="#F5F5F5" />
 
-                <AutoCompleteTextView
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_username"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+    <RelativeLayout
+        android:id="@+id/rl_password_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y130"
+        android:background="@color/basic_white"
+        android:paddingLeft="@dimen/x86"
+        android:paddingRight="@dimen/x86">
 
-            </android.support.design.widget.TextInputLayout>
+        <ImageView
+            android:id="@+id/icon_login_password"
+            android:layout_width="@dimen/x42"
+            android:layout_height="@dimen/y48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_login_password" />
 
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginStart="@dimen/x60"
+            android:layout_toEndOf="@id/icon_login_password"
+            android:layout_toRightOf="@id/icon_login_password"
+            android:background="@null"
+            android:hint="@string/prompt_password"
+            android:inputType="textPassword"
+            android:maxLength="10"
+            android:textColor="@color/basic_text_color"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
 
-                <EditText
-                    android:id="@+id/password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="@string/prompt_password"
-                    android:imeActionId="6"
-                    android:imeActionLabel="@string/action_sign_in_short"
-                    android:imeOptions="actionUnspecified"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true" />
+    <RelativeLayout
+        android:id="@+id/rl_sms_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y130"
+        android:background="@color/basic_white"
+        android:paddingLeft="@dimen/x86"
+        android:paddingRight="@dimen/x86"
+        android:visibility="gone">
 
-            </android.support.design.widget.TextInputLayout>
+        <Button
+            android:id="@+id/button_get_sms_code"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/y80"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/shap_for_login_button_gray"
+            android:gravity="center"
+            android:text="@string/get_sms_code"
+            android:textColor="@color/basic_white"
+            android:textSize="12sp" />
 
-            <Button
-                android:id="@+id/sign_in_button"
-                style="?android:textAppearanceSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="@string/action_sign_in"
-                android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/icon_login_sms"
+            android:layout_width="@dimen/x42"
+            android:layout_height="@dimen/y48"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@null"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_login_code" />
 
-        </LinearLayout>
-    </ScrollView>
-    <!-- Login progress -->
-    <ProgressBar
-        android:id="@+id/login_progress"
-        style="?android:attr/progressBarStyleLarge"
-        android:layout_width="50dp"
-        android:visibility="gone"
-        android:layout_height="50dp"
-        android:layout_gravity="center" />
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/edit_input_sms_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x60"
+            android:layout_marginStart="@dimen/x60"
+            android:layout_toEndOf="@id/icon_login_sms"
+            android:layout_toLeftOf="@id/button_get_sms_code"
+            android:layout_toRightOf="@id/icon_login_sms"
+            android:layout_toStartOf="@id/button_get_sms_code"
+            android:background="@null"
+            android:hint="@string/hint_input_sms_code"
+            android:inputType="number"
+            android:textColor="@color/basic_text_color"
+            android:textSize="@dimen/text_size_16" />
+    </RelativeLayout>
 
-</FrameLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y2"
+        android:background="#F5F5F5" />
+
+    <Button
+        android:id="@+id/login_button"
+        android:layout_width="@dimen/x600"
+        android:layout_height="@dimen/x90"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/y79"
+        android:background="@drawable/shap_for_login_button"
+        android:text="@string/text_button_login"
+        android:textColor="@color/basic_white"
+        android:textSize="@dimen/text_size_18" />
+
+    <LinearLayout
+        android:layout_width="@dimen/x600"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="10dp">
+
+        <TextView
+            android:id="@+id/button_sms_login"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:text="@string/text_button_sms_login"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_14" />
+
+        <TextView
+            android:id="@+id/button_forget_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:padding="10dp"
+            android:text="@string/text_button_forget_password"
+            android:textColor="@color/blue"
+            android:textSize="@dimen/text_size_14" />
+    </LinearLayout>
+
+</LinearLayout>
