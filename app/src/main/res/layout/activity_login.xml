@@ -17,7 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/y130"
         android:layout_marginTop="@dimen/y64"
-        android:background="@color/basic_white"
+        android:background="@color/white"
         android:paddingLeft="@dimen/x86"
         android:paddingRight="@dimen/x86">
 
@@ -57,7 +57,7 @@
         android:id="@+id/rl_password_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y130"
-        android:background="@color/basic_white"
+        android:background="@color/white"
         android:paddingLeft="@dimen/x86"
         android:paddingRight="@dimen/x86">
 
@@ -93,7 +93,7 @@
         android:id="@+id/rl_sms_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/y130"
-        android:background="@color/basic_white"
+        android:background="@color/white"
         android:paddingLeft="@dimen/x86"
         android:paddingRight="@dimen/x86"
         android:visibility="gone">
@@ -108,7 +108,7 @@
             android:background="@drawable/shap_for_login_button_gray"
             android:gravity="center"
             android:text="@string/get_sms_code"
-            android:textColor="@color/basic_white"
+            android:textColor="@color/white"
             android:textSize="12sp" />
 
         <ImageView
@@ -153,7 +153,7 @@
         android:layout_marginTop="@dimen/y79"
         android:background="@drawable/shap_for_login_button"
         android:text="@string/text_button_login"
-        android:textColor="@color/basic_white"
+        android:textColor="@color/white"
         android:textSize="@dimen/text_size_18" />
 
     <LinearLayout

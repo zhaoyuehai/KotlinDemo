@@ -11,4 +11,8 @@
     <string name="text_button_login">登录</string>
     <string name="text_button_sms_login">验证码登录</string>
     <string name="text_button_forget_password">忘记密码</string>
+    <string name="main_table_name_me">设置</string>
+    <string name="main_table_name_station">电站</string>
+    <string name="main_table_name_warning">告警</string>
+    <string name="main_table_name_order">工单</string>
 </resources>

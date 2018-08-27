@@ -5,17 +5,14 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <!--colorPrimary对应ActionBar的颜色-->
         <item name="colorPrimary">@color/colorPrimary</item>
-        <!-- 底部导航栏的颜色 -->
-        <!--<item name="android:navigationBarColor" tools:targetApi="lollipop">@color/navigationBarColor</item>-->
-        <item name="android:windowBackground">@color/white</item>
         <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- 底部导航栏的颜色 -->
+        <!--<item name="android:navigationBarColor" tools:targetApi="lollipop">@color/navigationBarColor</item>-->
+
     </style>
 
-    <style name="AppTheme.Transparent">
-        <item name="android:windowBackground">@android:color/transparent</item>
-        <item name="android:windowIsTranslucent">true</item>
-    </style>
+    <style name="AppTheme.Main" parent="AppTheme" />
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -29,5 +26,11 @@
         <item name="android:background">@null</item>
         <item name="android:windowBackground">@null</item>
         <item name="android:backgroundDimEnabled">false</item>
+    </style>
+    <!-- 横向线条 -->
+    <style name="h_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/y1</item>
+        <item name="android:background">@color/list_divider_color</item>
     </style>
 </resources>

@@ -6,7 +6,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:orientation="vertical"
-    app:cardBackgroundColor="@color/basic_white"
+    app:cardBackgroundColor="@color/white"
     app:cardCornerRadius="5dp">
 
     <ProgressBar

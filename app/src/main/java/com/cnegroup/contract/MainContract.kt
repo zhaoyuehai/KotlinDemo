@@ -8,7 +8,5 @@ import com.cnegroup.base.IBaseView
 interface MainContract {
 
     interface IView : IBaseView {
-        fun goLogin()
-        fun initData()
     }
 }

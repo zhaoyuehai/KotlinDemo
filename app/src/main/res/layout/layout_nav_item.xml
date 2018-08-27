@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/nav_iv_icon"
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/app_name"
+            android:paddingLeft="@dimen/x5"
+            android:paddingRight="@dimen/x5"
+            android:paddingTop="@dimen/y5"
+            android:scaleType="fitCenter"
+            android:src="@drawable/tab_icon_new" />
+
+        <TextView
+            android:id="@+id/nav_tv_dot"
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"
+            android:layout_gravity="top|center"
+            android:layout_marginLeft="@dimen/x12"
+            android:layout_marginStart="@dimen/x12"
+            android:background="@drawable/ic_red_dot"
+            android:gravity="center"
+            android:minWidth="16dp"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_12"
+            android:visibility="gone"
+            tools:text="12"
+            tools:visibility="visible" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/nav_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginTop="1dp"
+        android:gravity="center"
+        android:textColor="@color/primarybar_txt"
+        android:textSize="@dimen/text_size_12"
+        tools:text="资讯" />
+
+
+</LinearLayout>

@@ -13,17 +13,12 @@ class MainPresenter : BasePresenter<MainContract.IView>() {
     fun onSnackBarClick() {
         if (getView() == null) return
         showToast("SnackBar被点击")
-        getView()!!.goLogin()
     }
 
     fun onLoginClick() {
         if (MyApplication.mContext.getUser() != null) {
             MyApplication.mContext.setUser(null)
-            if (getView() != null)
-                getView()!!.initData()
         } else {
-            if (getView() != null)
-                getView()!!.goLogin()
         }
     }
 

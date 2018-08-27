@@ -18,7 +18,7 @@ object DialogUtils {
         val dialog = Dialog(context, R.style.progressDialog)
         dialog.setContentView(R.layout.layout_progress_dialog)
         dialog.setCancelable(cancelable)
-        dialog.setCanceledOnTouchOutside(cancelable)
+        dialog.setCanceledOnTouchOutside(cancelTouch)
         dialog.window.setBackgroundDrawableResource(android.R.color.transparent)
         return dialog
     }
