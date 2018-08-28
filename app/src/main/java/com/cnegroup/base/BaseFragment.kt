@@ -13,7 +13,7 @@ import android.view.ViewGroup
  * Created by zhaoyuehai 2018/8/1
  */
 abstract class BaseFragment : Fragment() {
-    protected var mInflater: LayoutInflater? = null
+    protected lateinit var mInflater: LayoutInflater
     protected var mBundle: Bundle? = null
     protected var mRoot: View? = null
 
@@ -24,14 +24,14 @@ abstract class BaseFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        mInflater = inflater
         if (mRoot != null) {
             if (mRoot!!.parent != null) {
                 val parent: ViewGroup = mRoot!!.parent as ViewGroup
                 parent.removeView(mRoot)
             }
         } else {
-            mInflater = inflater
-            mRoot = mInflater!!.inflate(getLayoutId(), container, false)
+            mRoot = mInflater.inflate(getLayoutId(), container, false)
             onRestartInstance(savedInstanceState)
             initWidget(mRoot)
         }
