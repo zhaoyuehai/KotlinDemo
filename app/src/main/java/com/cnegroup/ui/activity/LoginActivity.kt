@@ -21,14 +21,6 @@ class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginContract.IView {
         return LoginPresenter()
     }
 
-//    override fun swipeFinishEnable(): Boolean {
-//        return true
-//    }
-//
-//    override fun getDragEdge(): SwipeBackLayout.DragEdge {
-//        return SwipeBackLayout.DragEdge.TOP
-//    }
-
     override fun attachView() {
         mPresenter.attachView(this)
     }

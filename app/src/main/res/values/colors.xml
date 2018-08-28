@@ -9,9 +9,12 @@
     <color name="gray_d8">#D8D8D8</color>
     <color name="basic_text_color">#8E8E8E</color>
     <color name="green">#4db98b</color>
+    <color name="green_light">#24cf5f</color>
     <color name="blue">#00a2ff</color>
     <color name="user_info_message_notice">#E35B5A</color>
     <color name="status_bar_color">#CFCFCF</color>
     <color name="list_divider_color">#c8c7cc</color>
     <color name="text_black">#333333</color>
+    <color name="black_alpha_16">#16000000</color>
+    <color name="trans">#00000000</color>
 </resources>
