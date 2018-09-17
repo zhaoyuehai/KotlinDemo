@@ -11,15 +11,15 @@ abstract class BasePresenter<T : IView> : IPresenter<T> {
 
     private var mView: T? = null
 
-    override fun attachView(view: T) {
+    final override fun attachView(view: T) {
         mView = view
     }
 
-    override fun getView(): T? {
+    final override fun getView(): T? {
         return mView
     }
 
-    override fun detachView() {
+    final override fun detachView() {
         if (mCompositeDisposable != null)
             mCompositeDisposable!!.clear()
         mView = null
@@ -27,7 +27,7 @@ abstract class BasePresenter<T : IView> : IPresenter<T> {
 
     private var mCompositeDisposable: CompositeDisposable? = null
 
-    override fun add(d: Disposable): Boolean {
+    final override fun add(d: Disposable): Boolean {
         //如果解绑了的话添加,需要新的实例否则绑定时无效的
         if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
             mCompositeDisposable = CompositeDisposable()
@@ -35,7 +35,7 @@ abstract class BasePresenter<T : IView> : IPresenter<T> {
         return mCompositeDisposable!!.add(d)
     }
 
-    override fun remove(d: Disposable): Boolean {
+    final override fun remove(d: Disposable): Boolean {
         //如果解绑了的话添加,需要新的实例否则绑定时无效的
         if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
             mCompositeDisposable = CompositeDisposable()
@@ -43,7 +43,7 @@ abstract class BasePresenter<T : IView> : IPresenter<T> {
         return mCompositeDisposable!!.add(d)
     }
 
-    override fun delete(d: Disposable): Boolean {
+    final override fun delete(d: Disposable): Boolean {
         //如果解绑了的话添加,需要新的实例否则绑定时无效的
         if (mCompositeDisposable == null || mCompositeDisposable!!.isDisposed) {
             mCompositeDisposable = CompositeDisposable()
