@@ -7,6 +7,6 @@ package com.cnegroup
 class Constant{
     companion object {
         //SP
-        const val SHARED_PREFERENCES = "KotlinDemo"
+        const val SHARED_PREFERENCES = "YiXun"
     }
 }

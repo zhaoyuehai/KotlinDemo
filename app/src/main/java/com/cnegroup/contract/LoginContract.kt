@@ -1,14 +1,11 @@
 package com.cnegroup.contract
 
-import com.cnegroup.base.IBasePresenter
-import com.cnegroup.base.IBaseView
-
 /**
  * Created by zhaoyuehai 2018/8/1
  */
 interface LoginContract {
 
-    interface IView : IBaseView {
+    interface IView : com.cnegroup.base.IView {
 
         fun showProgress(show: Boolean)
 
@@ -16,9 +13,9 @@ interface LoginContract {
 
         fun onPassWordInputError(s: String)
 
-        fun goMain()
+        fun finish()
     }
-    interface IPresenter : IBasePresenter<IView> {
+    interface IPresenter : com.cnegroup.base.IPresenter<IView> {
         /**
          * 登录
          */

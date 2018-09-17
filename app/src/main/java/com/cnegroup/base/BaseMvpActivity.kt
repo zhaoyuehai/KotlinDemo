@@ -7,7 +7,7 @@ import com.cnegroup.util.ToastUtils
 /**
  * Created by zhaoyuehai 2018/8/1
  */
-abstract class BaseMvpActivity<T : IBasePresenter<*>> : SwipeBackActivity() {
+abstract class BaseMvpActivity<T : IPresenter<*>> : SwipeBackActivity(),IView {
 
     //P
     lateinit var mPresenter: T
@@ -42,11 +42,11 @@ abstract class BaseMvpActivity<T : IBasePresenter<*>> : SwipeBackActivity() {
         mPresenter.detachView()
     }
 
-    fun showToast(msg: String) {
+    override fun showToast(msg: String) {
         ToastUtils.showToast(msg)
     }
 
-    fun showToast(msgId: Int) {
+    override fun showToast(msgId: Int) {
         ToastUtils.showToast(msgId)
     }
 }

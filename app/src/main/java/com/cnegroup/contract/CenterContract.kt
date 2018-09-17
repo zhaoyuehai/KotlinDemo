@@ -1,7 +1,5 @@
 package com.cnegroup.contract
 
-import com.cnegroup.base.IBasePresenter
-import com.cnegroup.base.IBaseView
 import com.cnegroup.data.bean.VersionDataBean
 
 /**
@@ -9,7 +7,7 @@ import com.cnegroup.data.bean.VersionDataBean
  */
 interface CenterContract {
 
-    interface IView : IBaseView {
+    interface IView : com.cnegroup.base.IView {
 
         fun showUpdateTipDialog(data: VersionDataBean)
 
@@ -21,7 +19,7 @@ interface CenterContract {
 
     }
 
-    interface IPresenter : IBasePresenter<IView> {
+    interface IPresenter : com.cnegroup.base.IPresenter<IView> {
 
         fun checkVersion()
         

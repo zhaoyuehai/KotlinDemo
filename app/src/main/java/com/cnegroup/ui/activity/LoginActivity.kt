@@ -26,11 +26,6 @@ class LoginActivity :
         return this
     }
 
-    override fun goMain() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }
-
     override fun onUserNameInputError(s: String) {
         username.error = s
         username.requestFocus()

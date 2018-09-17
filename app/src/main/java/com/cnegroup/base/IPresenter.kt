@@ -6,7 +6,7 @@ import io.reactivex.internal.disposables.DisposableContainer
  * MVP中的Presenter基类接口
  * Created by zhaoyuehai 2018/9/14
  */
-interface IBasePresenter<T> : DisposableContainer {
+interface IPresenter<T> : DisposableContainer {
 
     fun attachView(view: T)
 

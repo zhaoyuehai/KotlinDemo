@@ -7,7 +7,7 @@ import io.reactivex.disposables.Disposable
  * MVP中的Presenter基类
  * Created by zhaoyuehai 2018/8/1
  */
-abstract class BasePresenter<T : IBaseView> : IBasePresenter<T> {
+abstract class BasePresenter<T : IView> : IPresenter<T> {
 
     private var mView: T? = null
 

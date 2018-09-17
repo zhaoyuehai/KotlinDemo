@@ -80,16 +80,6 @@ abstract class BaseApplication : MultiDexApplication(), Application.ActivityLife
         System.exit(0)
     }
 
-    private var user: UserBean? = null
-
-    fun setUser(user: UserBean?) {
-        this.user = user
-    }
-
-    fun getUser(): UserBean? {
-        return user
-    }
-
     protected fun finalize() {
         // 终止化逻辑
         Log.i("finalized--------:", this.javaClass.simpleName);

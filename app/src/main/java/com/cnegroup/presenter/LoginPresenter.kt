@@ -1,9 +1,9 @@
 package com.cnegroup.presenter
 
 import android.text.TextUtils
-import com.cnegroup.MyApplication
 import com.cnegroup.base.BasePresenter
 import com.cnegroup.contract.LoginContract
+import com.cnegroup.data.UserConfig
 import com.cnegroup.data.bean.ResultBean
 import com.cnegroup.data.bean.UserBean
 import com.cnegroup.data.net.ResultObserver
@@ -27,7 +27,8 @@ class LoginPresenter : BasePresenter<LoginContract.IView>(), LoginContract.IPres
                     if (getView() == null) return
                     getView()!!.showToast(result.message)
                     if (result.code == "10000") {
-                        MyApplication.mContext.setUser(result.data)
+                        UserConfig.instance.saveUser(result.data)
+                        //TODO 发广播通知
                     }
                 }
 
@@ -35,8 +36,8 @@ class LoginPresenter : BasePresenter<LoginContract.IView>(), LoginContract.IPres
                     super.onComplete()
                     if (getView() != null) {
                         getView()!!.showProgress(false)
-                        if (MyApplication.mContext.getUser() != null)
-                            getView()!!.goMain()
+                        if (UserConfig.instance.isLogin()!!)
+                            getView()!!.finish()
                     }
                 }
 

@@ -7,7 +7,7 @@ import com.cnegroup.util.ToastUtils
  * Fragment MVP基类
  * Created by zhaoyuehai 2018/9/14
  */
-abstract class BaseMvpFragment<T : IBasePresenter<*>> : BaseFragment() {
+abstract class BaseMvpFragment<T : IPresenter<*>> : BaseFragment(), IView {
 
     //P
     lateinit var mPresenter: T
@@ -34,11 +34,11 @@ abstract class BaseMvpFragment<T : IBasePresenter<*>> : BaseFragment() {
         mPresenter.detachView()
     }
 
-    fun showToast(msg: String) {
+    override fun showToast(msg: String) {
         ToastUtils.showToast(msg)
     }
 
-    fun showToast(msgId: Int) {
+    override fun showToast(msgId: Int) {
         ToastUtils.showToast(msgId)
     }
 }
