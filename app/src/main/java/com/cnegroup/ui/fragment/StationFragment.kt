@@ -1,7 +1,6 @@
 package com.cnegroup.ui.fragment
 
 import android.view.View
-import android.view.View.GONE
 import com.cnegroup.R
 import com.cnegroup.base.BaseActivity
 import com.cnegroup.base.BaseFragment
@@ -14,15 +13,11 @@ class StationFragment : BaseFragment() {
         return R.layout.layout_station
     }
 
-    override fun initWidget(mRoot: View?) {
-        super.initWidget(mRoot)
+    override fun initView(mRoot: View?) {
+        super.initView(mRoot)
         val statusBar: View? = mRoot!!.findViewById(R.id.viewStatusBar)
         if (BaseActivity.hasSetStatusBarColor) {
             statusBar!!.setBackgroundResource(R.color.status_bar_color)
         }
-    }
-
-    override fun init() {
-
     }
 }

@@ -1,5 +1,6 @@
 package com.cnegroup.contract
 
+import com.cnegroup.base.IBasePresenter
 import com.cnegroup.base.IBaseView
 
 /**
@@ -17,5 +18,10 @@ interface LoginContract {
 
         fun goMain()
     }
-
+    interface IPresenter : IBasePresenter<IView> {
+        /**
+         * 登录
+         */
+        fun login(username: String, password: String)
+    }
 }

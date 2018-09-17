@@ -1,5 +1,6 @@
 package com.cnegroup.contract
 
+import com.cnegroup.base.IBasePresenter
 import com.cnegroup.base.IBaseView
 
 /**
@@ -8,5 +9,8 @@ import com.cnegroup.base.IBaseView
 interface MainContract {
 
     interface IView : IBaseView {
+    }
+
+    interface IPresenter : IBasePresenter<IView> {
     }
 }

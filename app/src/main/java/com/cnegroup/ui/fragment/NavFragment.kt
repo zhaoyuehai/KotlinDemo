@@ -25,7 +25,7 @@ class NavFragment : BaseFragment(), View.OnClickListener {
         return R.layout.layout_nav
     }
 
-    override fun initWidget(mRoot: View?) {
+    override fun initView(mRoot: View?) {
         mNavStation = mRoot!!.findViewById(R.id.nav_item_station)
         mNavWarning = mRoot.findViewById(R.id.nav_item_warning)
         mNavOrder = mRoot.findViewById(R.id.nav_item_order)
@@ -38,9 +38,6 @@ class NavFragment : BaseFragment(), View.OnClickListener {
         mNavWarning!!.setOnClickListener(this)
         mNavOrder!!.setOnClickListener(this)
         mNavMe!!.setOnClickListener(this)
-    }
-
-    override fun init() {
     }
 
     override fun onClick(nav: View?) {

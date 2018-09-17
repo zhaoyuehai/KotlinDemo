@@ -9,18 +9,18 @@ import com.cnegroup.presenter.MainPresenter
 import com.cnegroup.ui.fragment.NavFragment
 import com.cnegroup.widget.NavigationButton
 
-class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IView, NavFragment.OnNavigationReselectListener {
+/**
+ * 主界面
+ * Created by zhaoyuehai 2018/8/1
+ */
+class MainActivity :
+        BaseMvpActivity<MainContract.IPresenter>(),
+        MainContract.IView,
+        NavFragment.OnNavigationReselectListener {
 
-    override fun onReselect(navigationButton: NavigationButton) {
-
-    }
-
-    override fun getPresenter(): MainPresenter {
-        return MainPresenter()
-    }
-
-    override fun attachView() {
-        mPresenter.attachView(this)
+    override fun initPresenter(): MainContract.IPresenter = with(MainPresenter()) {
+        attachView(this@MainActivity)
+        return this
     }
 
     var mNavF: NavFragment? = null
@@ -28,11 +28,15 @@ class MainActivity : BaseMvpActivity<MainPresenter>(), MainContract.IView, NavFr
     override fun init() {
         setStatusBarDarkMode()
         mNavF = supportFragmentManager.findFragmentById(R.id.fag_nav) as NavFragment
-        mNavF!!.setup(this,R.id.main_container, supportFragmentManager,  this)
+        mNavF!!.setup(this, R.id.main_container, supportFragmentManager, this)
     }
 
     override fun getContentViewId(): Int {
         return R.layout.activity_main
+    }
+
+    override fun onReselect(navigationButton: NavigationButton) {
+
     }
 
     private var exitTime: Long = 0

@@ -15,4 +15,14 @@
     <string name="main_table_name_station">电站</string>
     <string name="main_table_name_warning">告警</string>
     <string name="main_table_name_order">工单</string>
+    <string name="loading">加载中</string>
+    <string name="update_version_btn1">稍后更新</string>
+    <string name="update_version_btn2">前去更新</string>
+    <string name="have_new_version">发现新版本V</string>
+    <string name="text_cancel">取消</string>
+    <string name="download">正在下载…</string>
+    <string name="download_reday">准备下载…</string>
+    <string name="download_fail">下载失败！</string>
+    <string name="download_success">下载成功！</string>
+    <string name="install">安装</string>
 </resources>

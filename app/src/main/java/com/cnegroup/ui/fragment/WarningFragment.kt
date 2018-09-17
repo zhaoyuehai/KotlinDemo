@@ -11,6 +11,4 @@ class WarningFragment : BaseFragment() {
         return R.layout.layout_warning
     }
 
-    override fun init() {
-    }
 }

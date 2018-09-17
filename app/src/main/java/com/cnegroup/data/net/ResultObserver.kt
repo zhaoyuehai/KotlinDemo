@@ -11,7 +11,7 @@ import java.net.SocketTimeoutException
 /**
  * Created by zhaoyuehai 2018/8/2
  */
-abstract class BaseObserver<T> : Observer<T> {
+abstract class ResultObserver<T> : Observer<T> {
 
     private var disposable: Disposable? = null
     private var container: DisposableContainer? = null

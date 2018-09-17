@@ -1,6 +1,7 @@
 package com.cnegroup.base
 
 import android.os.Bundle
+import android.support.annotation.IdRes
 import android.support.annotation.LayoutRes
 import android.support.v4.app.Fragment
 import android.util.Log
@@ -33,26 +34,26 @@ abstract class BaseFragment : Fragment() {
         } else {
             mRoot = mInflater.inflate(getLayoutId(), container, false)
             onRestartInstance(savedInstanceState)
-            initWidget(mRoot)
+            initView(mRoot)
+            initData()
         }
         return mRoot
     }
 
-    protected open fun initWidget(mRoot: View?) {}
+    protected open fun initView(mRoot: View?) {}
+
+    protected open fun initData() {}
 
     protected open fun onRestartInstance(savedInstanceState: Bundle?) {}
 
     @LayoutRes
     abstract fun getLayoutId(): Int
 
-    abstract fun init()
+    protected fun <T : View?> findViewById(@IdRes resourceIdRes: Int): T {
+        return mRoot!!.findViewById<T>(resourceIdRes)
+    }
 
     protected open fun initBundle(mBundle: Bundle?) {}
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        init()
-    }
 
     protected fun finalize() {
         // 终止化逻辑

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/basic_page_bg"
     android:orientation="vertical">
 
     <FrameLayout
@@ -116,4 +117,31 @@
         </LinearLayout>
 
     </FrameLayout>
+
+    <TextView
+        android:id="@+id/test_btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:padding="12dp"
+        tools:text="按钮按钮1" />
+
+    <TextView
+        android:id="@+id/test_btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:padding="12dp"
+        tools:text="按钮按钮2" />
+
+    <TextView
+        android:id="@+id/test_btn3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        android:padding="12dp"
+        tools:text="按钮按钮3" />
 </LinearLayout>

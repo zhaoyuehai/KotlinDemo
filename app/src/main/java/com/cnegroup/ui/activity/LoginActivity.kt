@@ -7,6 +7,8 @@ import android.widget.TextView
 import com.cnegroup.R
 import com.cnegroup.base.BaseMvpActivity
 import com.cnegroup.contract.LoginContract
+import com.cnegroup.contract.MainContract
+import com.cnegroup.presenter.CenterPresenter
 import com.cnegroup.presenter.LoginPresenter
 import com.cnegroup.util.DialogUtils
 import kotlinx.android.synthetic.main.activity_login.*
@@ -15,14 +17,13 @@ import kotlinx.android.synthetic.main.activity_login.*
  * 登录界面
  * Created by zhaoyuehai 2018/8/1
  */
-class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginContract.IView {
+class LoginActivity :
+        BaseMvpActivity<LoginContract.IPresenter>(),
+        LoginContract.IView {
 
-    override fun getPresenter(): LoginPresenter {
-        return LoginPresenter()
-    }
-
-    override fun attachView() {
-        mPresenter.attachView(this)
+    override fun initPresenter(): LoginContract.IPresenter = with(LoginPresenter()){
+        attachView(this@LoginActivity)
+        return this
     }
 
     override fun goMain() {
@@ -64,7 +65,7 @@ class LoginActivity : BaseMvpActivity<LoginPresenter>(), LoginContract.IView {
     var progressDialog: Dialog? = null
     override fun showProgress(show: Boolean) {
         if (progressDialog == null)
-            progressDialog = DialogUtils.getProgressDialog(this)
+            progressDialog = DialogUtils.getProgressDialog(this,"登录中...")
         if (show) {
             DialogUtils.showDialog(progressDialog)
         } else {

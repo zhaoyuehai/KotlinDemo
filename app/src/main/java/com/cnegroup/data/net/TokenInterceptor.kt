@@ -8,26 +8,26 @@ import okhttp3.Response
  * Created by zhaoyuehai 2018/8/23
  */
 class TokenInterceptor : Interceptor {
-
-    fun setNeedAuthorization(needAuthorization: Boolean) {
-        this.needAuthorization = needAuthorization
-    }
-
     private var needAuthorization: Boolean = true
+    private var needJsonHeader: Boolean = true
+
+    fun reSet(needAuthorization: Boolean, needJsonHeader: Boolean) {
+        this.needAuthorization = needAuthorization
+        this.needJsonHeader = needJsonHeader
+    }
 
     override fun intercept(chain: Interceptor.Chain): Response {
         val original: Request = chain.request()
-        if (needAuthorization) {
-            val request = original.newBuilder()
-                    .header("Authorization", "bearer" + " " + "")
-//                                UserData.getInstances(BaseApplication.mContext).getValue(UserData.ACCESS_TOKEN, ""))
-                    .header("Accept", "application/json")
-                    .method(original.method(), original.body())
-                    .build()
-            return chain.proceed(request)
-        } else {
-            return chain.proceed(original)
+        val builder = original.newBuilder()
+        if (needJsonHeader) {
+            builder.header("Accept", "application/json")
         }
+        if (needAuthorization) {
+            builder.header("Authorization", "bearer" + " " + "")
+//                                UserData.getInstances(BaseApplication.mContext).getValue(UserData.ACCESS_TOKEN, ""))
+        }
+        val request = builder.method(original.method(), original.body()).build()
+        return chain.proceed(request)
     }
 
 }

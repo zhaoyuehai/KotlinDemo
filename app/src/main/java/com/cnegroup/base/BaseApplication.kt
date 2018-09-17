@@ -5,7 +5,7 @@ import android.app.Application
 import android.os.Bundle
 import android.support.multidex.MultiDexApplication
 import android.util.Log
-import com.cnegroup.data.response.UserBean
+import com.cnegroup.data.bean.UserBean
 import com.cnegroup.ui.activity.MainActivity
 
 /**

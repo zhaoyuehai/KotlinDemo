@@ -1,7 +1,7 @@
-package com.cnegroup.data.api
+package com.cnegroup.data.net.api
 
-import com.cnegroup.data.response.ResultBean
-import com.cnegroup.data.response.UserBean
+import com.cnegroup.data.bean.ResultBean
+import com.cnegroup.data.bean.UserBean
 import io.reactivex.Observable
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded

@@ -1,4 +1,4 @@
-package com.cnegroup.data.response
+package com.cnegroup.data.bean
 
 /**
  * Created by zhaoyuehai 2018/8/2

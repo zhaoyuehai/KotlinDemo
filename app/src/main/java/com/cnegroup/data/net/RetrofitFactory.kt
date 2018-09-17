@@ -35,11 +35,11 @@ class RetrofitFactory private constructor() {
     }
 
     fun <T> create(service: Class<T>): T {
-        return create(service, true)
+        return create(service, true, true)
     }
 
-    fun <T> create(service: Class<T>, needAuthorization: Boolean): T {
-        interceptor.setNeedAuthorization(needAuthorization)
+    fun <T> create(service: Class<T>, needAuthorization: Boolean, needJsonHeader: Boolean): T {
+        interceptor.reSet(needAuthorization, needJsonHeader)
         return retrofit.create(service)
     }
 
