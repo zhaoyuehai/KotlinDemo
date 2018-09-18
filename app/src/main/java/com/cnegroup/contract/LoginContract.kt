@@ -1,5 +1,9 @@
 package com.cnegroup.contract
 
+import com.cnegroup.data.bean.ResultBean
+import com.cnegroup.data.bean.UserBean
+import com.cnegroup.data.net.ResultObserver
+
 /**
  * Created by zhaoyuehai 2018/8/1
  */
@@ -15,10 +19,18 @@ interface LoginContract {
 
         fun finish()
     }
+
     interface IPresenter : com.cnegroup.base.IPresenter<IView> {
         /**
          * 登录
          */
         fun login(username: String, password: String)
+    }
+
+    interface IModel {
+        /**
+         * 登录
+         */
+        fun login(username: String, password: String, observer: ResultObserver<ResultBean<UserBean>>)
     }
 }

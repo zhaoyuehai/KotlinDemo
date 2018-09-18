@@ -16,7 +16,7 @@ import io.reactivex.disposables.Disposable
  */
 class LoginPresenter : BasePresenter<LoginContract.IView>(), LoginContract.IPresenter {
 
-    private var loginModule: LoginModel = LoginModel()
+    private var loginModule: LoginContract.IModel = LoginModel()
 
     override fun login(username: String, password: String) {
         if (getView() == null) return
