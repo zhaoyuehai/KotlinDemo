@@ -4,19 +4,19 @@
 <<------------------------------------MVP------------------------------------>>
 
 V:
-    interface IView
+    interface IBaseView
 
-        abstract class BaseMvpActivity<T : IPresenter<*>> : IView
+        abstract class BaseMvpActivity<T : IBasePresenter<*>> : IBaseView
 
-        abstract class BaseMvpFragment<T : IPresenter<*>> : IView
+        abstract class BaseMvpFragment<T : IBasePresenter<*>> : IBaseView
 
 
 
 
 P:
-    interface IPresenter<T>
+    interface IBasePresenter<T>
 
-        abstract class BasePresenter<T : IView> : IPresenter<T>
+        abstract class BasePresenter<T : IBaseView> : IBasePresenter<T>
 
 
 <<------------------------------------MVP------------------------------------>>
