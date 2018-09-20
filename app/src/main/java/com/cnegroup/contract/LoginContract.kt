@@ -9,7 +9,7 @@ import com.cnegroup.data.net.ResultObserver
  */
 interface LoginContract {
 
-    interface IView : com.cnegroup.base.IView {
+    interface IView : com.cnegroup.base.IBaseView {
 
         fun showProgress(show: Boolean)
 
@@ -20,7 +20,7 @@ interface LoginContract {
         fun finish()
     }
 
-    interface IPresenter : com.cnegroup.base.IPresenter<IView> {
+    interface IPresenter : com.cnegroup.base.IBasePresenter<IView> {
         /**
          * 登录
          */

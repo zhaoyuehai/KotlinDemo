@@ -7,7 +7,7 @@ import com.cnegroup.util.ToastUtils
  * Fragment MVP基类
  * Created by zhaoyuehai 2018/9/14
  */
-abstract class BaseMvpFragment<T : IPresenter<*>> : BaseFragment(), IView {
+abstract class BaseMvpFragment<T : IBasePresenter<*>> : BaseFragment(), IBaseView {
 
     //P
     lateinit var mPresenter: T
@@ -16,7 +16,7 @@ abstract class BaseMvpFragment<T : IPresenter<*>> : BaseFragment(), IView {
      * 创建返回Presenter 并且 attachView
      * example:
      *
-    override fun initPresenter(): CenterContract.IPresenter = with(CenterPresenter()) {
+    override fun initPresenter(): CenterContract.IBasePresenter = with(CenterPresenter()) {
     attachView(this@CenterFragment)
     return this
     }

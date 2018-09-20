@@ -5,9 +5,9 @@ package com.cnegroup.contract
  */
 interface MainContract {
 
-    interface IView : com.cnegroup.base.IView {
+    interface IView : com.cnegroup.base.IBaseView {
     }
 
-    interface IPresenter : com.cnegroup.base.IPresenter<IView> {
+    interface IPresenter : com.cnegroup.base.IBasePresenter<IView> {
     }
 }

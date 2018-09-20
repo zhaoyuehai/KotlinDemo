@@ -7,7 +7,7 @@ import com.cnegroup.data.bean.VersionDataBean
  */
 interface CenterContract {
 
-    interface IView : com.cnegroup.base.IView {
+    interface IView : com.cnegroup.base.IBaseView {
 
         fun showUpdateTipDialog(data: VersionDataBean)
 
@@ -19,7 +19,7 @@ interface CenterContract {
 
     }
 
-    interface IPresenter : com.cnegroup.base.IPresenter<IView> {
+    interface IPresenter : com.cnegroup.base.IBasePresenter<IView> {
 
         fun checkVersion()
         

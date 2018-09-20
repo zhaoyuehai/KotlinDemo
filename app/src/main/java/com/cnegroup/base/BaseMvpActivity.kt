@@ -7,7 +7,7 @@ import com.cnegroup.util.ToastUtils
 /**
  * Created by zhaoyuehai 2018/8/1
  */
-abstract class BaseMvpActivity<T : IPresenter<*>> : SwipeBackActivity(),IView {
+abstract class BaseMvpActivity<T : IBasePresenter<*>> : SwipeBackActivity(),IBaseView {
 
     //P
     lateinit var mPresenter: T
@@ -20,7 +20,7 @@ abstract class BaseMvpActivity<T : IPresenter<*>> : SwipeBackActivity(),IView {
      * 创建返回Presenter 并且 attachView
      *  example:
      *
-    override fun initPresenter(): MainContract.IPresenter = with(MainPresenter()) {
+    override fun initPresenter(): MainContract.IBasePresenter = with(MainPresenter()) {
     attachView(this@MainActivity)
     return this
     }
