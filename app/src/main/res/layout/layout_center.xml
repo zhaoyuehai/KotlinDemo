@@ -13,7 +13,7 @@
         android:background="@color/green_light"
         android:paddingTop="25dp">
 
-        <com.cnegroup.widget.SolarSystemView
+        <com.yuehai.widget.SolarSystemView
             android:id="@+id/user_view_solar_system"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

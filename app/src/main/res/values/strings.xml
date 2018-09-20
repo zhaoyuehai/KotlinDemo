@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">易巡</string>
+    <string name="app_name">KotlinDemo</string>
     <string name="action_settings">Settings</string>
 
     <string name="prompt_username">用户名/手机</string>
@@ -12,9 +12,9 @@
     <string name="text_button_sms_login">验证码登录</string>
     <string name="text_button_forget_password">忘记密码</string>
     <string name="main_table_name_me">设置</string>
-    <string name="main_table_name_station">电站</string>
-    <string name="main_table_name_warning">告警</string>
-    <string name="main_table_name_order">工单</string>
+    <string name="main_table_name_station">模块1</string>
+    <string name="main_table_name_warning">模块2</string>
+    <string name="main_table_name_order">模块3</string>
     <string name="loading">加载中</string>
     <string name="update_version_btn1">稍后更新</string>
     <string name="update_version_btn2">前去更新</string>

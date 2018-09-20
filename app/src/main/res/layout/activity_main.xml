@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.cnegroup.ui.activity.MainActivity">
+    tools:context="com.yuehai.ui.activity.MainActivity">
 
     <FrameLayout
         android:id="@+id/main_container"
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/fag_nav"
-        android:name="com.cnegroup.ui.fragment.NavFragment"
+        android:name="com.yuehai.ui.fragment.NavFragment"
         android:layout_width="match_parent"
         android:layout_height="45dp" />
 </LinearLayout>

@@ -6,25 +6,25 @@
     android:gravity="center_vertical"
     android:orientation="horizontal">
 
-    <com.cnegroup.widget.NavigationButton
+    <com.yuehai.widget.NavigationButton
         android:id="@+id/nav_item_station"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
-    <com.cnegroup.widget.NavigationButton
+    <com.yuehai.widget.NavigationButton
         android:id="@+id/nav_item_warning"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
-    <com.cnegroup.widget.NavigationButton
+    <com.yuehai.widget.NavigationButton
         android:id="@+id/nav_item_order"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1" />
 
-    <com.cnegroup.widget.NavigationButton
+    <com.yuehai.widget.NavigationButton
         android:id="@+id/nav_item_me"
         android:layout_width="0dp"
         android:layout_height="match_parent"

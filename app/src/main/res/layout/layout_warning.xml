@@ -13,5 +13,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="200dp"
-        android:text="告警" />
+        android:text="222" />
 </LinearLayout>
